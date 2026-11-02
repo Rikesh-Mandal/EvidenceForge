@@ -1,0 +1,30 @@
+# Secrets
+.env
+.env.*
+!.env.example
+!.env.production.example
+!.env.local.example
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Model artifacts and local data
+models/*
+
+!models/.gitkeep
+*.joblib
+*.log
+*.dump
+*.sql.gz
+# Frontend
+node_modules/
+.next/
+frontend/.env.local
+# Misc
+.DS_Store
+
+project-docs/
