@@ -1,0 +1,15 @@
+EVIDENCEFORGE INTERNAL AI USAGE POLICY - TRAINING EXAMPLE
+
+AI generated content must be checked against cited source documents before
+it is used for business decisions. Employees must not enter confidential
+customer data into external public AI services without written approval.
+
+Every AI assisted report should name the source documents used to prepare it.
+The reviewer must verify that each citation supports the adjacent claim.
+
+Data retention for this training application is 30 days unless the document
+owner requests earlier deletion. Owners may ask for their documents to be
+deleted from the local system. This sample policy is fictional training data.
+
+If the model cannot find sufficient evidence, it must answer that the documents
+do not contain the requested information. The system must not fabricate sources.

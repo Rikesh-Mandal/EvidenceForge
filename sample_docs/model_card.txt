@@ -1,0 +1,17 @@
+EVIDENCEFORGE MODEL CARD - TRAINING EXAMPLE
+
+The sentence embedding model is all-MiniLM-L6-v2. It produces 384-dimensional
+vectors. It encodes document chunks and incoming questions using the same
+model. Similarity search uses cosine distance inside the pgvector extension.
+
+Dense retrieval may miss rare identifiers and exact error codes. PostgreSQL
+full-text search helps with those lexical queries. Reciprocal Rank Fusion
+combines ranked results from both retrieval methods.
+
+A cross-encoder reranker jointly reads a question and one candidate passage.
+It is more computationally expensive than an embedding lookup, so it is applied
+to a small candidate set rather than to every stored passage.
+
+Retrieval quality is evaluated with Recall at k and Mean Reciprocal Rank.
+Generation quality is reviewed separately for citation support, faithfulness,
+and appropriate abstention when the corpus lacks an answer.

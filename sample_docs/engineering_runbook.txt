@@ -1,0 +1,17 @@
+EVIDENCEFORGE DEPLOYMENT RUNBOOK - TRAINING EXAMPLE
+
+The development database is PostgreSQL 17 with pgvector enabled. Local Docker
+publishes database port 5433 only on 127.0.0.1. Production keeps the database
+on the private Compose network with no host port mapping.
+
+Schema changes are managed with Alembic migrations. A deployment must run
+alembic upgrade head before starting the API server. Never edit tables directly
+on the production database without a reviewed and reversible migration.
+
+Backups use pg_dump. Every restore procedure must be tested in an isolated
+non-production database. Docker named volumes persist data across a container
+restart; deleting the volume deletes the stored database files.
+
+A private Tailscale VPN is preferred for this training application. A public
+Tailscale Funnel is not approved without user authentication, tenant isolation,
+malware scanning, rate limiting and a documented threat model.
