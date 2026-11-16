@@ -23,8 +23,7 @@ def extract_pages(filename: str, data: bytes) -> list[tuple[int | None, str]]:
                     raise ValueError("Password protected PDFs are unsupported")
                 if len(doc) > 150:
                     raise ValueError("PDF has more than 150 pages")
-                return[(i + 1, page.get_text("text"))
-                       for i, page in enumerate(doc)]
+                return[(i + 1, page.get_text("text")) for i, page in enumerate(doc)]
         except (pymupdf.FileDataError, pymupdf.EmptyFileError) as exc:
             raise ValueError("Invalid PDF") from exc
     raise ValueError("Only .txt and text-based .pdf are supported")
