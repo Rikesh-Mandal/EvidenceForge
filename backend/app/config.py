@@ -7,7 +7,7 @@ class Settings(BaseSettings):
     database_url:str
     api_key:str
     ollama_url: str = "http://127.0.0.1:11434"
-    ollama_model: str = "qwen3:4b-instruct"
+    ollama_model: str = "qwen3:8b"
     embed_model: str = "sentence-transformers/all-MiniLM-L6-v2"
     rerank_model: str = "cross-encoder/ms-marco-MiniLM-L6-v2"
     allowed_origins: str = "http://localhost:3000"
